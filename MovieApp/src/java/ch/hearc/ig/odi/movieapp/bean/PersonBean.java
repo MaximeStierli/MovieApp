@@ -29,7 +29,7 @@ public class PersonBean {
      * Retourne une liste de personnes
      * @return Une liste de personnes
      */
-    public List<Person> getCustomers(){
+    public List<Person> getPeople(){
         return services.getPeopleList();
     }
 }

@@ -30,7 +30,7 @@ public class MovieBean {
      * Retourne une liste de films
      * @return Une liste de films
      */
-    public List<Movie> getCustomers(){
+    public List<Movie> getMovies(){
         return services.getMoviesList();
     }
 }

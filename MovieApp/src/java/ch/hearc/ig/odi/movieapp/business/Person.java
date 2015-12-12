@@ -54,4 +54,8 @@ public class Person {
     public void addMovie(Movie movie) throws UniqueException{
         this.movies.add(movie);
     }
+    
+    public int countMovies(){
+        return movies.size();
+    }
 }
