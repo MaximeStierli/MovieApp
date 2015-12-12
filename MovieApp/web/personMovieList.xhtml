@@ -15,7 +15,7 @@ and open the template in the editor.
         <h2>
             <h:outputText value="Liste des personnes" />
         </h2>
-
+        <!--Liste des personne-->
         <h:form>
             <h:dataTable var="person" value="#{personBean.getPeople()}">
                 <h:column>
@@ -28,13 +28,15 @@ and open the template in the editor.
                     <f:facet name="header">
                         <h:outputText value="Prénom" />
                     </f:facet>
-                    <h:commandLink value="#{person.firstName}" action="" />
+                    <h:outputText value="#{person.firstName}" />
+                   <!-- <h:commandLink value="#{person.firstName}" action="" />-->
                 </h:column>
                 <h:column>
                     <f:facet name="header">
                         <h:outputText value="Nom" />
                     </f:facet>
-                    <h:commandLink value="#{person.lastName}" action="" />
+                    <h:outputText value="#{person.lastName}" />
+                    <!--<h:commandLink value="#{person.lastName}" action="" />-->
                 </h:column>
                 <h:column>
                     <f:facet name="header">
@@ -48,7 +50,7 @@ and open the template in the editor.
         <h2>
             <h:outputText value="Liste des films" />
         </h2>
-
+        <!--Liste des films-->
         <h:form>
             <h:dataTable var="movie" value="#{movieBean.getMovies()}">
                 <h:column>
@@ -61,7 +63,8 @@ and open the template in the editor.
                     <f:facet name="header">
                         <h:outputText value="Nom du film" />
                     </f:facet>
-                    <h:commandLink value="#{movie.name}" action="" />
+                    <h:outputText value="#{movie.name}" />
+                   <!-- <h:commandLink value="#{movie.name}" action="" />-->
                 </h:column>
                 <h:column>
                     <f:facet name="header">

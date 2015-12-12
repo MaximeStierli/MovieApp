@@ -6,7 +6,7 @@
 package ch.hearc.ig.odi.movieapp.business;
 
 import ch.hearc.ig.odi.movieapp.exception.UniqueException;
-import java.util.List;
+import java.util.HashMap;
 
 /**
  *
@@ -16,15 +16,13 @@ public class Person {
     private Long id;
     private String firstName;
     private String lastName;
-    private List<Movie> movies;
+    private HashMap<Long,Movie> movies;
 
     public Person(Long id, String firstName, String lastName) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
-    }
-    
-    public Person() {
+        this.movies = new HashMap();
     }
 
     public Long getId() {
@@ -52,7 +50,9 @@ public class Person {
     }
     
     public void addMovie(Movie movie) throws UniqueException{
-        this.movies.add(movie);
+        this.movies.put(movie.getId(),movie);
+        //Ajoute la personne au film également.
+        movie.addPerson(this);
     }
     
     public int countMovies(){

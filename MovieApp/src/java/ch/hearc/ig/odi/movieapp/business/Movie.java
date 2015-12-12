@@ -5,7 +5,7 @@
  */
 package ch.hearc.ig.odi.movieapp.business;
 
-import java.util.List;
+import java.util.HashMap;
 
 /**
  *
@@ -15,15 +15,13 @@ public class Movie {
     private Long id;
     private String name;
     private String producer;
-    private List<Person> people;
+    private HashMap<Long,Person> people;
 
     public Movie(Long id, String name, String producer) {
         this.id = id;
         this.name = name;
         this.producer = producer;
-    }
-
-    public Movie() {
+        this.people = new HashMap();
     }
 
     public Long getId() {
@@ -51,7 +49,7 @@ public class Movie {
     }
 
     public void addPerson(Person person){
-        this.people.add(person);
+        this.people.put(person.getId(),person);
     }
     
     public int countPeople(){
