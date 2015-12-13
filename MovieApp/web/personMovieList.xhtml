@@ -61,8 +61,7 @@ and open the template in the editor.
                     <f:facet name="header">
                         <h:outputText value="Nom du film" />
                     </f:facet>
-                    <h:outputText value="#{movie.name}" />
-                   <!-- <h:commandLink value="#{movie.name}" action="" />-->
+                   <h:commandLink value="#{movie.name}" action="#{movieDetailsBean.showMovie(movie)}" />
                 </h:column>
                 <h:column>
                     <f:facet name="header">
