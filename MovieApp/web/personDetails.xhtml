@@ -5,12 +5,56 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
-    <head>
-        <title>TODO supply a title</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    </head>
-    <body>
-        <div>TODO write content</div>
-    </body>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Détails d'une personne</title>
+    </h:head>
+    <h:body>
+        <h2>
+            <h:outputText value="Détails d'une personne" />
+        </h2>
+
+        <h:panelGrid border="0" columns="2">
+            <h:outputLabel value="ID : " />
+            <h:outputText value="#{personDetailsBean.person.id}" />
+            <h:outputLabel value="Prénom : " />
+            <h:outputText value="#{personDetailsBean.person.firstName}" />
+            <h:outputLabel value="Nom : " />
+            <h:outputText value="#{personDetailsBean.person.lastName}" />
+        </h:panelGrid>
+        
+        
+        <h3>
+            <h:outputText value="Liste des films de la personne" />
+        </h3>
+        
+        <h:form>
+            <h:dataTable var="movie" value="#{personDetailsBean.getMovies()}">
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="ID" />
+                    </f:facet>
+                    <h:outputText value="#{movie.id}" />
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Nom du film" />
+                    </f:facet>
+                    <h:outputText value="#{movie.name}" />
+                   <!-- <h:commandLink value="#{movie.name}" action="#{movieDetailsBean.showmovie(movie)}" /> -->
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Producteur" />
+                    </f:facet>
+                    <h:outputText value="#{movie.producer}" />
+                </h:column>
+            </h:dataTable>
+            
+            <br/>
+            <h:commandButton value="Retour à la page d'accueil" action="personMovieList" />
+        </h:form>
+    </h:body>
 </html>
