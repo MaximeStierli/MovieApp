@@ -28,15 +28,13 @@ and open the template in the editor.
                     <f:facet name="header">
                         <h:outputText value="Prénom" />
                     </f:facet>
-                    <h:outputText value="#{person.firstName}" />
-                   <!-- <h:commandLink value="#{person.firstName}" action="" />-->
+                   <h:commandLink value="#{person.firstName}" action="#{personDetailsBean.showPerson(person)}" />
                 </h:column>
                 <h:column>
                     <f:facet name="header">
                         <h:outputText value="Nom" />
                     </f:facet>
-                    <h:outputText value="#{person.lastName}" />
-                    <!--<h:commandLink value="#{person.lastName}" action="" />-->
+                    <h:commandLink value="#{person.lastName}" action="#{personDetailsBean.showPerson(person)}" />
                 </h:column>
                 <h:column>
                     <f:facet name="header">

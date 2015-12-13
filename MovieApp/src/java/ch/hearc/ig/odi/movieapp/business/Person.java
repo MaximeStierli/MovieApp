@@ -48,6 +48,10 @@ public class Person {
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
+
+    public HashMap<Long, Movie> getMovies() {
+        return movies;
+    }
     
     public void addMovie(Movie movie) throws UniqueException{
         this.movies.put(movie.getId(),movie);

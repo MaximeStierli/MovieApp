@@ -48,6 +48,10 @@ public class Movie {
         this.producer = producer;
     }
 
+    public HashMap<Long, Person> getPeople() {
+        return people;
+    }
+
     public void addPerson(Person person){
         this.people.put(person.getId(),person);
     }
